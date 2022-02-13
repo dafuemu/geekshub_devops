@@ -1,16 +1,22 @@
 # Proyecto final
 
-## Notas iniciales
+El servicio accounts está desplegado en un cluster de k8s en DigitalOcean. Se puede consultar el estado en:
+
+```
+curl 67.207.72.58/actuator/health
+```
 
 El objectivo del proyecto era tener un repositorio con el que poder crear un cluster de k8s en AWS, puede hacerlo y el repo es [este](https://github.com/dafuemu/eks-aws-terraform). Finalmente para poder mantener el cluster sin costes opte por DigitalOcena y el repositorio para crear el
-cluster es [este](https://github.com/dafuemu/eks-digitalocean-terraform) el cual tiene su propio workflow que basicamente aplica los comandos basicos de terraform
+cluster es [este](https://github.com/dafuemu/eks-digitalocean-terraform) el cual tiene su propio workflow que basicamente ejecuta los comandos basicos de terraform
 para iniciar y aplicar los cambios.
 
-En el cluster hay 3 nodos como minimo 5 como maximo, y en este cluster esta desplegado:
+En el cluster hay 3 nodos como minimo 5 como máximo, y en este cluster esta desplegado:
 
 - Account service: Aplicación backend [repo](https://github.com/dafuemu/hexagoanl-java-spring)
-- Mysql base de datos: Base de datos a la que se conecta la aplicación, de momento solo es una instancia pero la idea era montar un cluster.
-- EFK: Elastic Search, Fluentd y Kibana: El stack para logging, aunque también proporciona monitoring y tracing. 
+- Mysql base de datos: Base de datos a la que se conectaría el servicio, de momento solo es una instancia pero la idea era montar un cluster [repo](https://github.com/dafuemu/mysql_k8_deployment)
+
+Pendiente:
+- EFK: Elastic Search, Fluentd y Kibana: El stack para logging, aunque también proporciona monitoring y tracing ()
 - Prometheus, Grafana, AlertManager: Stack para Monitoring
 
 
