@@ -14,15 +14,20 @@ En el cluster hay 3 nodos como minimo 5 como máximo, y en este cluster esta des
 
 - Account service: Aplicación backend [repo](https://github.com/dafuemu/hexagoanl-java-spring)
 - Mysql base de datos: Base de datos a la que se conectaría el servicio, de momento solo es una instancia pero la idea era montar un cluster [repo](https://github.com/dafuemu/mysql_k8_deployment)
+- EFK: Elastic Search, Fluentd y Kibana: El stack para logging, aqui el [repo](https://github.com/dafuemu/efk_k8s_deplyment) 
 
 Pendiente:
-- EFK: Elastic Search, Fluentd y Kibana: El stack para logging, aqui el [repo](https://github.com/dafuemu/efk_k8s_deplyment) 
 - Prometheus, Grafana, AlertManager: Stack para Monitoring
+- Conectar el servcio account con la base de datos
+- Loggear en elastic search
+- Mostrar metricas en Grafana
+
+![pods on k8s](images/pods_k8s.png)
 
 
 Para provisionar el cluster de kubernetes hay otras opciones como **kops** o **helm** por ejemplo, pero he optado por montarlo aplicando los recursos definidos en los diferentes ficheros **yaml**. También me sirve para saber que recursos se necesita desplegar en k8s para cada stack.
 
-## Mejore practicas apara sistemas de almacenamiento
+## Notas:
 If you are planning to deploy stateful applications, such as Oracle, MySQL, Elasticsearch, and MongoDB, then using StatefulSets is a great option. The following points need to be considered while creating stateful applications:
 
 - Create a separate namespace for databases.
