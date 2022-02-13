@@ -16,7 +16,7 @@ En el cluster hay 3 nodos como minimo 5 como máximo, y en este cluster esta des
 - Mysql base de datos: Base de datos a la que se conectaría el servicio, de momento solo es una instancia pero la idea era montar un cluster [repo](https://github.com/dafuemu/mysql_k8_deployment)
 
 Pendiente:
-- EFK: Elastic Search, Fluentd y Kibana: El stack para logging, aunque también proporciona monitoring y tracing ()
+- EFK: Elastic Search, Fluentd y Kibana: El stack para logging, aqui el [repo](https://github.com/dafuemu/efk_k8s_deplyment) 
 - Prometheus, Grafana, AlertManager: Stack para Monitoring
 
 
